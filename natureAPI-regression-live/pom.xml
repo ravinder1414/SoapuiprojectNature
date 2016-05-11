@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.nature.natureapi</groupId>
+  <artifactId>natureAPI-regression-live</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>natureAPI-regression-live</name>
+  <url>http://maven.apache.org</url>
+
+        <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <pluginRepositories>
+	<pluginRepository>
+		<id>eviwarePluginRepository</id>
+		<url>http://www.eviware.com/repository/maven2/</url>
+	</pluginRepository>
+  </pluginRepositories>
+
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.2</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+	<groupId>org.codehaus.groovy</groupId>
+	<artifactId>groovy-all</artifactId>
+	<version>2.1.3</version>
+</dependency>
+  </dependencies>
+  
+  <build>
+
+		<!-- To use the plugin goals in your POM or parent POM -->
+		<plugins>
+			<plugin>
+	<groupId>eviware</groupId>
+	<artifactId>maven-soapui-pro-plugin</artifactId>
+<!-- <version>3.6.1</version> -->	
+<version>4.5.1</version>
+
+	<configuration>
+	   <printReport>true</printReport> 
+	   <junitReport>true</junitReport>
+		<junitHtmlReport>true</junitHtmlReport>
+		<exportAll>false</exportAll>
+		<projectFile>${basedir}/src/test/resources/NatureAPI_RegressionLive.xml</projectFile>
+		<outputFolder>${basedir}/target/soapui-reports</outputFolder>
+	</configuration>
+
+	
+          </plugin>
+
+		</plugins>
+	</build>
+</project>

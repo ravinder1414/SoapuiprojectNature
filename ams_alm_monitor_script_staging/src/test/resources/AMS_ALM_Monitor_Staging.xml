@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="AMS_ALM_Monitor_Staging" soapui-version="4.6.0" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="Article metric" type="rest" basePath="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://staging-external.nature.com</con:endpoint></con:endpoints><con:resource name="{encoded-doi}" path="/articlemetric/rest/metric/{encoded-doi}"><con:settings/><con:parameters><con:parameter><con:name>encoded-doi</con:name><con:value>encoded-doi</con:value><con:style>TEMPLATE</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type><con:default>encoded-doi</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>interface</con:name><con:value>CLIENT-KEY</con:value><con:style>QUERY</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type><con:default>CLIENT-KEY</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html; charset=iso-8859-1</con:mediaType><con:status>403 406 404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400 404</con:status><con:params/><con:element xmlns:enc="http://external.nature.com/articlemetric/rest/metric/encoded-doi">enc:Fault</con:element></con:representation><con:request name="Request 1" mediaType="application/xml"><con:settings/><con:endpoint>http://external.nature.com</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="interface" value="9cc2803f947fcad6" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request><con:request name="Copy of Request 1" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://external.nature.com</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="encoded-doi" value="10.1038/nature11870"/>
+  <con:entry key="interface" value="9cc2803f947fcad6"/>
+</con:parameters></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="ALM" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://api.altmetric.com</con:endpoint></con:endpoints><con:resource name="Almetric" path="/v1/fetch/doi/{encoded-doi}"><con:settings/><con:parameters><con:parameter><con:name>encoded-doi</con:name><con:value>10.1038/nature11870</con:value><con:style>TEMPLATE</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type><con:default>10.1038/nature11870</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>key</con:name><con:value>2605fc2ea486dd4e5b8c9c7edc768b51</con:value><con:style>QUERY</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type><con:default>2605fc2ea486dd4e5b8c9c7edc768b51</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>include_sources</con:name><con:value>blogs,news,googleplus</con:value><con:style>QUERY</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type><con:default>blogs,news,googleplus</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:request name="Request 1" mediaType="application/xml" accept="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://api.altmetric.com</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="encoded-doi" value="10.1038/nature11870" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="AMS_ALM_Monitor_TestSuite" type="rest" definitionUrl="twitter" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT"/><con:endpoints/></con:interface><con:testSuite name="ALM_AMS_UPDATE_CHECK_MONITOR_Staging_TestSuite"><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="GeneratableJUnitReport@Style">Multiple Pages</con:setting><con:setting id="GeneratableJUnitReport@Folder">C:\Users\suresh.kumar\Desktop</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="amsUpdateCheckTest" searchProperties="true" id="cd96733a-0ce1-4c4b-b5df-e8e28f580f45"><con:settings/><con:testStep type="datasource" name="DOI_Source"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F472418b&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fnature11737&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F497161c&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fni.2597&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F497291e&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500035a&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500009b&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fncomms3234&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500156a&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fnsmb0213-244b&lt;/con:entry></row></con:configuration></con:dataSource><con:property>doi</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="AMS_Request"><con:settings/><con:config service="Article metric" methodName="Method 1" resourcePath="/articlemetric/rest/metric/{encoded-doi}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AMS_Request" mediaType="application/xml" accept=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://staging-external.nature.com</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="encoded-doi" value="${DOI_Source#doi}"/>
+  <con:entry key="interface" value="9cc2803f947fcad6"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="AMS_Update_Checking_Script" id="2a901b11-26ef-4457-ab56-e1d043669d31"><con:settings/><con:config><script><![CDATA[import groovy.json.JsonSlurper
+
+responseContent = testRunner.testCase.getTestStepByName("AMS_Request").getPropertyValue("response")
+slurperresponse = new JsonSlurper().parseText(responseContent)
+
+def today1= new Date()
+
+def createdDateTime = (slurperresponse.created)
+def upadteDateTime = slurperresponse["last-update-time"]
+
+def articleDOI = (slurperresponse.citation.doi)
+
+
+createdDateTime1 = Date.parse( "yyyy-M-d H:m:s", createdDateTime )
+upadteDateTime1 = Date.parse( "yyyy-M-d H:m:s", upadteDateTime )
+
+log.info("Created Time is "+createdDateTime1)
+log.info("Last-Updated-Time is "+upadteDateTime1)
+log.info("Current Time is "+today1)
+
+createdDateTime = createdDateTime1.getTime()
+upadteDateTime  = upadteDateTime1.getTime()
+today = today1.getTime()
+
+if ( today-createdDateTime <= 2.592e+9){
+  assert today-upadteDateTime <=3.6e+6 : "Expected Outcome: today-upadteDateTime <= 1 Hour if today-createdDateTime <= 30 Days.\n today's time:$today1 \n Created Time:$createdDateTime1 \n Last-upadted-Time: $upadteDateTime1 \n Actual Outcome :today-upadteDateTime > 1 Hour \n Message: Article- $articleDOI is not updated within an hour even article Created Time $createdDateTime1 is less than 30 days old"
+   }
+else {
+  assert today-upadteDateTime <=4.32e+7: "Expected Output: today-upadteDateTime <= 12 Hours if today-createdDateTime > 30 Days.\n today's time:$today1 \n Created Time:$createdDateTime1 \n Last-upadted-Time: $upadteDateTime1 \n Actual Output :today-upadteDateTime > 12 Hours \n Message: Article- $articleDOI is not updated within 12 hours when article Created Time $createdDateTime1 is more than 30 days old"
+}
+
+
+
+
+
+
+
+
+]]></script></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSourceLoop"><con:settings/><con:config><dataSourceStep>DOI_Source</dataSourceStep><targetStep>AMS_Request</targetStep></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>2a901b11-26ef-4457-ab56-e1d043669d31</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="viewCountCompare" searchProperties="true" id="341c34ed-dffa-41e2-9d74-4ebc8639264e" disabled="true"><con:settings><con:setting id="GeneratableJUnitReport@Folder">C:\Users\suresh.kumar\Desktop</con:setting></con:settings><con:testStep type="datasource" name="DOI_Source" id="0eb29e8f-abfa-4f85-a01d-14b633f808ac"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F472418b&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fnature11737&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F497161c&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fni.2597&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F497291e&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500035a&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500009b&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fncomms3234&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500156a&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fnsmb0213-244b&lt;/con:entry></row></con:configuration></con:dataSource><con:property>doi</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="AMS_Request" id="d74d2dd7-80b7-442d-9b6e-3426e0402d21"><con:settings/><con:config service="Article metric" resourcePath="/articlemetric/rest/metric/{encoded-doi}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AMS_Request" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://staging-external.nature.com</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="encoded-doi" value="${DOI_Source#doi}"/>
+  <con:entry key="interface" value="9cc2803f947fcad6"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="ALM_Request" id="fc670a6e-22b7-4d5a-9837-4a94fb54f905"><con:settings/><con:config service="ALM" resourcePath="/v1/fetch/doi/{encoded-doi}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ALM_Request" mediaType="application/xml" accept="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://api.altmetric.com</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="encoded-doi" value="${DOI_Source#doi}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="AMS_ALM_View_Count_Verification" id="c5548968-78fd-490e-a45c-90f583e52a25"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+
+ams = testRunner.testCase.getTestStepByName("AMS_Request").getPropertyValue("response")
+slurperresponse_ams = new JsonSlurper().parseText(ams)
+
+alm = testRunner.testCase.getTestStepByName("ALM_Request").getPropertyValue("response")
+slurperresponse_alm = new JsonSlurper().parseText(alm)
+
+def views_granted_access_ams = (slurperresponse_ams.counts.downloads.publisher.views_granted_access)
+def views_granted_access_alm = (slurperresponse_alm.counts.downloads.publisher.views_granted_access)
+
+def time_line_ams = (slurperresponse_ams.counts.downloads.publisher.timeline)
+def time_line_alm = (slurperresponse_alm.counts.downloads.publisher.timeline)
+//log.info(time_line_alm)
+
+def articleDOI = (slurperresponse_ams.citation.doi)
+
+
+assert views_granted_access_ams == views_granted_access_alm:"Expected Outcome: For Article- $articleDOI AMS and ALM view_granted_access count should be same \n AMS view_granted_access:$views_granted_access_ams \n ALM view_granted_access:$views_granted_access_alm \n Actual Outcome:Article- $articleDOI AMS and ALM view_granted_access count is different"
+
+
+assert time_line_ams == time_line_alm: "Expected Outcome: AMS and ALM timeline should be same \n AMS timeline:$time_line_ams \n ALM timeline:$time_line_alm \n Actual Outcome:AMS and ALM timeline is different "
+
+
+</script></con:config></con:testStep><con:testStep type="datasourceloop" name="DOI_AMS_Source Loop"><con:settings/><con:config><dataSourceStep>DOI_Source</dataSourceStep><targetStep>AMS_Request</targetStep></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>0eb29e8f-abfa-4f85-a01d-14b633f808ac</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d74d2dd7-80b7-442d-9b6e-3426e0402d21</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>c5548968-78fd-490e-a45c-90f583e52a25</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>fc670a6e-22b7-4d5a-9837-4a94fb54f905</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="responseAttributesCompare" searchProperties="true" id="08564aa0-3ba8-4d63-8224-45099be2f8e7" disabled="true"><con:settings/><con:testStep type="datasource" name="DOI_Source"><con:settings/><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F472418b&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fnature11737&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F497161c&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fni.2597&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F497291e&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500035a&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500009b&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fncomms3234&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252F500156a&lt;/con:entry></row><row>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">10.1038%252Fnsmb0213-244b&lt;/con:entry></row></con:configuration></con:dataSource><con:property>doi</con:property><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="AMS_Request"><con:settings/><con:config service="Article metric" resourcePath="/articlemetric/rest/metric/{encoded-doi}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AMS_Request" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://staging-external.nature.com</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="encoded-doi" value="${DOI_Source#doi}"/>
+  <con:entry key="interface" value="9cc2803f947fcad6"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="ALM_Request"><con:settings/><con:config service="ALM" resourcePath="/v1/fetch/doi/{encoded-doi}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="ALM_Request" mediaType="application/xml" accept="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://api.altmetric.com</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="encoded-doi" value="${DOI_Source#doi}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="AMS_ALM_Attributes_Comparision"><con:settings/><con:config><script><![CDATA[import groovy.json.JsonSlurper
+
+ams = testRunner.testCase.getTestStepByName("AMS_Request").getPropertyValue("response")
+slurperresponse_ams = new JsonSlurper().parseText(ams)
+
+alm = testRunner.testCase.getTestStepByName("ALM_Request").getPropertyValue("response")
+slurperresponse_alm = new JsonSlurper().parseText(alm)
+
+def articleDOI = (slurperresponse_ams.citation.doi)
+
+
+
+
+//almetric_id
+
+def altmetric_id_ams = (slurperresponse_ams.altmetric_id)
+def altmetric_id_alm = (slurperresponse_alm.altmetric_id)
+log.info("Comapring altmetric_id_ams and altmetric_id_alm")
+assert altmetric_id_ams == altmetric_id_alm : "Expected Outcome:Article- $articleDOI altmetric_id should be same for AMS and ALM Response\naltmetric_id for AMS is $altmetric_id_ams\n altmetric_id for ALM is $altmetric_id_alm\n Actual Outcome:altmetric_id is not same for AMS and ALM Response "	
+
+
+
+//counts_readers
+if (slurperresponse_ams.counts.readers !=null && slurperresponse_alm.counts.readers !=null){
+def counts_readers_ams = (slurperresponse_ams.counts.readers)
+def counts_readers_alm = (slurperresponse_alm.counts.readers)
+log.info("Comapring counts_readers_ams and counts_readers_alm")
+assert counts_readers_ams == counts_readers_alm : "Expected Outcome:Article- $articleDOI counts_readers should be same for AMS and ALM Response\n counts_readers for AMS is $counts_readers_ams\n counts_readers for ALM is $counts_readers_alm\n Actual Outcome:counts_readers is not same for AMS and ALM Response "
+}
+
+//counts_facebook
+if(slurperresponse_ams.counts.facebook !=null && slurperresponse_alm.counts.facebook !=null){
+def counts_facebook_ams = (slurperresponse_ams.counts.facebook)
+def counts_facebook_alm = (slurperresponse_alm.counts.facebook)
+log.info("Comapring counts_facebook_ams and counts_facebook_alm")
+assert counts_facebook_ams == counts_facebook_alm : "Expected Outcome:Article- $articleDOI counts_facebook should be same for AMS and ALM Response\n counts_facebook for AMS is $counts_facebook_ams\n counts_facebook for ALM is $counts_facebook_alm\n Actual Outcome:counts_facebook is not same for AMS and ALM Response "
+}
+
+//counts_blogs
+if(slurperresponse_ams.counts.blogs !=null && slurperresponse_alm.counts.blogs !=null){
+def counts_blogs_ams = (slurperresponse_ams.counts.blogs)
+def counts_blogs_alm = (slurperresponse_alm.counts.blogs)
+log.info("Comapring counts_blogs_ams and counts_blogs_alm")
+assert counts_blogs_ams == counts_blogs_alm : "Expected Outcome:Article- $articleDOI counts_blogs should be same for AMS and ALM Response\n counts_blogs for AMS is $counts_blogs_ams\n counts_blogs for ALM is $counts_blogs_alm\n Actual Outcome:counts_blogs is not same for AMS and ALM Response "
+}
+
+//counts_googleplus
+if(slurperresponse_ams.counts.googleplus !=null && slurperresponse_alm.counts.googleplus !=null){
+def counts_googleplus_ams = (slurperresponse_ams.counts.googleplus)
+def counts_googleplus_alm = (slurperresponse_alm.counts.googleplus)
+log.info("Comapring counts_googleplus_ams and counts_googleplus_alm")
+assert counts_googleplus_ams == counts_googleplus_ams : "Expected Outcome:Article- $articleDOI counts_googleplus should be same for AMS and ALM Response\n counts_googleplus for AMS is $counts_googleplus_ams\n counts_googleplus for ALM is $counts_googleplus_alm\n Actual Outcome:counts_googleplus is not same for AMS and ALM Response "
+}
+
+//counts_news
+if(slurperresponse_ams.counts.news !=null && slurperresponse_alm.counts.news !=null){
+def counts_news_ams = (slurperresponse_ams.counts.news)
+def counts_news_alm = (slurperresponse_alm.counts.news)
+log.info("Comapring counts_news_ams and counts_news_alm")
+assert counts_news_ams == counts_news_alm : "Expected Outcome:Article- $articleDOI counts_news should be same for AMS and ALM Response\n counts_news for AMS is $counts_news_ams\n counts_news for ALM is $counts_news_alm\n Actual Outcome:counts_news is not same for AMS and ALM Response "
+}
+
+//counts_pinterest
+if(slurperresponse_ams.counts.pinterest !=null && slurperresponse_alm.counts.pinterest !=null){
+def counts_pinterest_ams = (slurperresponse_ams.counts.pinterest)
+def counts_pinterest_alm = (slurperresponse_alm.counts.pinterest)
+log.info("Comapring counts_pinterest_ams and counts_pinterest_alm")
+assert counts_pinterest_ams == counts_pinterest_alm : "Expected Outcome:Article- $articleDOI counts_pinterest should be same for AMS and ALM Response\n counts_pinterest for AMS is $counts_pinterest_ams\n counts_pinterest for ALM is $counts_pinterest_alm\n Actual Outcome:counts_pinterest is not same for AMS and ALM Response "
+}
+
+//counts_total
+if(slurperresponse_ams.counts.total !=null && slurperresponse_alm.counts.total !=null){
+def counts_total_ams = (slurperresponse_ams.counts.total)
+def counts_total_alm = (slurperresponse_alm.counts.total)
+log.info("Comapring counts_total_ams and counts_total_alm")
+assert counts_total_ams == counts_total_alm : "Expected Outcome:Article- $articleDOI counts_total should be same for AMS and ALM Response\n counts_total for AMS is $counts_total_ams\n counts_total for ALM is $counts_total_alm\n Actual Outcome:counts_total is not same for AMS and ALM Response "
+}
+
+//counts_reddit
+if(slurperresponse_ams.counts.reddit !=null && slurperresponse_alm.counts.reddit !=null){
+def counts_reddit_ams = (slurperresponse_ams.counts.reddit)
+def counts_reddit_alm = (slurperresponse_alm.counts.reddit)
+log.info("Comapring counts_reddit_ams and counts_reddit_alm")
+assert counts_reddit_ams == counts_reddit_alm : "Expected Outcome:Article- $articleDOI counts_reddit should be same for AMS and ALM Response\n counts_reddit for AMS is $counts_reddit_ams\n counts_reddit for ALM is $counts_reddit_alm\n Actual Outcome:counts_reddit is not same for AMS and ALM Response "
+}
+
+//counts_f1000
+if(slurperresponse_ams.counts.f1000 !=null && slurperresponse_alm.counts.f1000 !=null){
+def counts_f1000_ams = (slurperresponse_ams.counts.f1000)
+def counts_f1000_alm = (slurperresponse_alm.counts.f1000)
+log.info("Comapring counts_f1000_ams and counts_f1000_alm")
+assert counts_f1000_ams == counts_f1000_alm : "Expected Outcome:Article- $articleDOI counts_f1000 should be same for AMS and ALM Response\n counts_f1000 for AMS is $counts_f1000_ams\n counts_f1000 for ALM is $counts_f1000_alm\n Actual Outcome:counts_f1000 is not same for AMS and ALM Response "
+}
+
+//counts_twitter
+if(slurperresponse_ams.counts.twitter !=null && slurperresponse_alm.counts.twitter !=null){
+def counts_twitter_ams = (slurperresponse_ams.counts.twitter)
+def counts_twitter_alm = (slurperresponse_alm.counts.twitter)
+log.info("Comapring counts_twitter_ams and counts_twitter_alm")
+assert counts_twitter_ams == counts_twitter_alm : "Expected Outcome:Article- $articleDOI counts_twitter should be same for AMS and ALM Response\n counts_twitter for AMS is $counts_twitter_ams\n counts_twitter for ALM is $counts_twitter_alm\n Actual Outcome:counts_twitter is not same for AMS and ALM Response "
+}
+
+
+//altmetric_score_score
+if(slurperresponse_ams.altmetric_score.score !=null && slurperresponse_alm.altmetric_score.score !=null){
+def altmetric_score_score_ams = (slurperresponse_ams.altmetric_score.score)
+def altmetric_score_score_alm = (slurperresponse_alm.altmetric_score.score)
+log.info("Comapring altmetric_score_score_ams and altmetric_score_score_alm")
+assert altmetric_score_score_ams == altmetric_score_score_alm : "Expected Outcome:Article- $articleDOI altmetric_score_score should be same for AMS and ALM Response\n altmetric_score_score for AMS is $altmetric_score_score_ams\n altmetric_score_score for ALM is $altmetric_score_score_alm\n Actual Outcome:altmetric_score_score is not same for AMS and ALM Response "
+}
+
+//altmetric_score_context_for_score_all
+if(slurperresponse_alm.altmetric_score.context_for_score !=null){
+if(slurperresponse_ams.altmetric_score.context_for_score.all !=null && slurperresponse_alm.altmetric_score.context_for_score.all !=null){
+def altmetric_score_context_for_score_all_ams = (slurperresponse_ams.altmetric_score.context_for_score.all)
+def altmetric_score_context_for_score_all_alm = (slurperresponse_alm.altmetric_score.context_for_score.all)
+log.info("Comapring altmetric_score_context_for_score_all_ams and altmetric_score_context_for_score_all_alm")
+assert altmetric_score_context_for_score_all_ams == altmetric_score_context_for_score_all_alm : "Expected Outcome:Article- $articleDOI altmetric_score_context_for_score_all should be same for AMS and ALM Response\n altmetric_score_context_for_score_all for AMS is $altmetric_score_context_for_score_all_ams\n altmetric_score_context_for_score_all for ALM is $altmetric_score_context_for_score_all_alm\n Actual Outcome:altmetric_score_context_for_score_all is not same for AMS and ALM Response "
+}
+
+//altmetric_score_context_for_score_similar_age_3m
+if(slurperresponse_ams.altmetric_score.context_for_score.similar_age_3m !=null && slurperresponse_alm.altmetric_score.context_for_score.similar_age_3m !=null){
+def altmetric_score_context_for_score_similar_age_3m_ams = (slurperresponse_ams.altmetric_score.context_for_score.similar_age_3m)
+def altmetric_score_context_for_score_similar_age_3m_alm = (slurperresponse_alm.altmetric_score.context_for_score.similar_age_3m)
+log.info("Comapring altmetric_score_context_for_score_similar_age_3m_ams and altmetric_score_context_for_score_similar_age_3m_alm")
+assert altmetric_score_context_for_score_similar_age_3m_ams == altmetric_score_context_for_score_similar_age_3m_alm : "Expected Outcome:Article- $articleDOI altmetric_score_context_for_score_similar_age_3m should be same for AMS and ALM Response\n altmetric_score_context_for_score_similar_age_3m for AMS is $altmetric_score_context_for_score_similar_age_3m_ams\n altmetric_score_context_for_score_similar_age_3m for ALM is $altmetric_score_context_for_score_similar_age_3m_alm\n Actual Outcome:altmetric_score_context_for_score_similar_age_3m is not same for AMS and ALM Response "
+}
+
+//altmetric_score_context_for_score_this_journal
+if(slurperresponse_ams.altmetric_score.context_for_score.this_journal !=null && slurperresponse_alm.altmetric_score.context_for_score.this_journal !=null){
+def altmetric_score_context_for_score_this_journal_ams = (slurperresponse_ams.altmetric_score.context_for_score.this_journal)
+def altmetric_score_context_for_score_this_journal_alm = (slurperresponse_alm.altmetric_score.context_for_score.this_journal)
+log.info("Comapring altmetric_score_context_for_score_this_journal_ams and altmetric_score_context_for_score_this_journal_alm")
+assert altmetric_score_context_for_score_this_journal_ams == altmetric_score_context_for_score_this_journal_alm : "Expected Outcome:Article- $articleDOI altmetric_score_context_for_score_this_journal should be same for AMS and ALM Response\n altmetric_score_context_for_score_this_journal for AMS is $altmetric_score_context_for_score_this_journal_ams\n altmetric_score_context_for_score_this_journal for ALM is $altmetric_score_context_for_score_this_journal_alm\n Actual Outcome:altmetric_score_context_for_score_this_journal is not same for AMS and ALM Response "
+}
+
+//altmetric_score_context_for_score_similar_age_this_journal_3m
+if(slurperresponse_ams.altmetric_score.context_for_score.similar_age_this_journal_3m !=null && slurperresponse_alm.altmetric_score.context_for_score.similar_age_this_journal_3m !=null){
+def altmetric_score_context_for_score_similar_age_this_journal_3m_ams = (slurperresponse_ams.altmetric_score.context_for_score.similar_age_this_journal_3m)
+def altmetric_score_context_for_score_similar_age_this_journal_3m_alm = (slurperresponse_alm.altmetric_score.context_for_score.similar_age_this_journal_3m)
+log.info("Comapring altmetric_score_context_for_score_similar_age_this_journal_3m_ams and altmetric_score_context_for_score_similar_age_this_journal_3m_alm")
+assert altmetric_score_context_for_score_similar_age_this_journal_3m_ams == altmetric_score_context_for_score_similar_age_this_journal_3m_alm : "Expected Outcome:Article- $articleDOI altmetric_score_context_for_score_similar_age_this_journal_3m should be same for AMS and ALM Response\n altmetric_score_context_for_score_similar_age_this_journal_3m for AMS is $altmetric_score_context_for_score_similar_age_this_journal_3m_ams\n altmetric_score_context_for_score_similar_age_this_journal_3m for ALM is $altmetric_score_context_for_score_similar_age_this_journal_3m_alm\n Actual Outcome:altmetric_score_context_for_score_similar_age_this_journal_3m is not same for AMS and ALM Response "
+}
+	
+}
+
+////geo_twitter
+//if(slurperresponse_ams.geo.twitter !=null && slurperresponse_alm.geo.twitter !=null){
+//def geo_twitter_ams = (slurperresponse_ams.geo.twitter)
+//def geo_twitter_alm = (slurperresponse_alm.geo.twitter)
+//assert geo_twitter_ams == geo_twitter_alm : "Expected Outcome:Article- $articleDOI altmetric_score_geo_twitter should be same for AMS and ALM Response\n altmetric_score_geo_twitter for AMS is $altmetric_score_geo_twitter_ams\n altmetric_score_geo_twitter for ALM is $altmetric_score_geo_twitter_alm\n Actual Outcome:altmetric_score_geo_twitter is not same for AMS and ALM Response "
+//}
+
+//posts_googleplus
+if(slurperresponse_ams.posts !=null){
+if(slurperresponse_ams.posts.googleplus !=null && slurperresponse_alm.posts.googleplus !=null){
+def posts_googleplus_ams = (slurperresponse_ams.posts.googleplus)
+def posts_googleplus_alm = (slurperresponse_alm.posts.googleplus)
+log.info("Comapring posts_googleplus_ams and posts_googleplus_alm")
+assert posts_googleplus_ams == posts_googleplus_alm : "Expected Outcome:Article- $articleDOI posts_googleplus should be same for AMS and ALM Response\n posts_googleplus for AMS is $posts_googleplus_ams\n posts_googleplus for ALM is $posts_googleplus_alm\n Actual Outcome:posts_googleplus is not same for AMS and ALM Response "
+}
+
+//posts_news
+if(slurperresponse_ams.posts.news !=null && slurperresponse_alm.posts.news !=null){
+def posts_news_ams = (slurperresponse_ams.posts.news)
+def posts_news_alm = (slurperresponse_alm.posts.news)
+log.info("Comapring posts_news_ams and posts_news_alm")
+assert posts_news_ams == posts_news_alm : "Expected Outcome:Article- $articleDOI posts_news should be same for AMS and ALM Response\n posts_news for AMS is $posts_news_ams\n posts_news for ALM is $posts_news_alm\n Actual Outcome:posts_news is not same for AMS and ALM Response "
+}
+	
+}
+
+//images
+if(slurperresponse_ams.images !=null && slurperresponse_alm.images !=null){
+def images_ams = (slurperresponse_ams.images)
+def images_alm = (slurperresponse_alm.images)
+log.info("Comapring images_ams and images_alm")
+assert images_ams == images_alm : "Expected Outcome:Article- $articleDOI images should be same for AMS and ALM Response\n images for AMS is $images_ams\n images for ALM is $images_alm\n Actual Outcome: images is not same for AMS and ALM Response "
+}
+
+//score
+if(slurperresponse_ams.score !=null && slurperresponse_alm.score !=null){
+def score_ams = (slurperresponse_ams.score)
+def score_alm = (slurperresponse_ams.score)
+log.info("Comapring score_ams and score_alm")
+assert score_ams == score_alm : "Expected Outcome:Article- $articleDOI score should be same for AMS and ALM Response\n score for AMS is $score_ams\n score for ALM is $score_alm\n Actual Outcome: score is not same for AMS and ALM Response "
+}
+
+
+
+
+
+
+
+]]></script></con:config></con:testStep><con:testStep type="datasourceloop" name="DOI_AMS_ALM_Source_Loop"><con:settings/><con:config><dataSourceStep>DOI_Source</dataSourceStep><targetStep>AMS_Request</targetStep></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties><con:property><con:name>encoded-doi</con:name><con:value>DOI</con:value></con:property></con:properties><con:tearDownScript>for ( testCaseResult in runner.results ){
+testCaseName = testCaseResult.getTestCase().name
+log.info testCaseName
+if ( testCaseResult.getStatus().toString() == 'FAILED' ){
+log.info "$testCaseName has failed"
+for ( testStepResult in testCaseResult.getResults() ){
+testStepResult.messages.each() { msg -> log.info msg }
+}
+}
+}</con:tearDownScript><con:reportParameters/></con:testSuite><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:reportTemplates/><con:xmlTemplates/><con:parameters/></con:reporting><con:afterRunScript/><con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep"><con:script>////filePath = '${basedir}/target/soapui-reports/'
+////filePath = System.getProperty(user.dir)+'/target/soapui-reports/'
+//filePath = 'soapuiCI/target/soapui-reports/'
+//
+//fos = new FileOutputStream( filePath + testStepResult.testStep.label + '.txt', true )
+//
+//pw = new PrintWriter( fos )
+//
+//testStepResult.writeTo( pw )
+//
+//pw.close()
+//
+//fos.close()
+</con:script></con:eventHandlers><con:sensitiveInformation/></con:soapui-project>

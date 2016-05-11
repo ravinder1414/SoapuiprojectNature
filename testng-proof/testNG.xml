@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="test1">
+
+<test name="Login " parallel="false" preserve-order="true">
+
+<classes>
+
+<class name="com.nature.foxtrot.tests.SecureReferralAccess">
+ <methods>
+        <include name="SecureReferralAccessINFORMS" />
+</methods>
+</class>
+
+<class name="com.nature.foxtrot.tests.LoginAthens">
+ <methods>
+        <include name="LoginViaAthensNature" />
+        <exclude name="LoginViaAthensPalgraveJournals" />
+        <include name="AthensLoginNature" />
+</methods>
+</class>
+
+<class name="com.nature.foxtrot.tests.LoginShibboleth">
+<methods>
+        <include name="LoginViaShibbolethNature" />
+        <include name="ShibbolethInstitutionalloginSelectCountryNature" />
+        <include name="ShibbolethInstitutionalloginSearchInstitutionNature" />
+        <include name="ShibbolethInstitutionalLoginUserRedirectNature" />
+        <include name="LoginShibbolethToNCBJournalsViaBrunalUniversityNature" />
+        <include name="LoginShibbolethToNCBJournalsViaBrunalUniversityWithInvalidCredentialsNature" />
+        <exclude name="LoginViaShibbolethPalgraveJournals" />
+        <exclude name="ShibbolethInstitutionalloginSelectCountryPalgraveJournals" />
+        <exclude name="ShibbolethInstitutionalloginSelectCountryPalgraveJournals" />
+        <exclude name="ShibbolethInstitutionalLoginUserRedirectPalgraveJournals" />
+        <exclude name="LoginShibbolethToBEJournalsViaBrunalUniversityPalgraveJournals" />
+        <exclude name="LoginShibbolethToBEJournalsViaBrunalUniversityWithInvalidCredentialsPalgraveJournals" />
+</methods>
+</class>
+
+<class name="com.nature.foxtrot.tests.Registration">
+<methods>
+        <include name="successfulRegistration" />
+        <include name="verificationEmail" />
+</methods>
+</class>
+
+</classes>
+
+</test>
+
+</suite>

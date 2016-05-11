@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RestDemoSuite">
+
+<test name="RestDemoTest " parallel="false" preserve-order="true">
+
+<classes>
+
+
+<class name="com.nature.foxtrot.tests.RestDemo">
+ <methods>
+        <include name="checkEmail" />
+        <include name="createNewUser" />
+        <include name="updateUserAddress" />
+</methods>
+</class>
+</classes>
+
+</test>
+
+</suite>
